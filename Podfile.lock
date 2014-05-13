@@ -1,0 +1,24 @@
+PODS:
+  - LBBlurredImage (0.2.0)
+  - Mantle (1.4.1):
+    - Mantle/extobjc
+  - Mantle/extobjc (1.4.1)
+  - ReactiveCocoa (2.3):
+    - ReactiveCocoa/UI
+  - ReactiveCocoa/Core (2.3):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3)
+  - ReactiveCocoa/UI (2.3):
+    - ReactiveCocoa/Core
+
+DEPENDENCIES:
+  - LBBlurredImage
+  - Mantle
+  - ReactiveCocoa
+
+SPEC CHECKSUMS:
+  LBBlurredImage: 26bacd10063a6e886de6a374f4727c3cefb22fc2
+  Mantle: 0714cdb2b8559d9e6c2410d6a8529e3307bff189
+  ReactiveCocoa: dde7b11a14954edf789e7343b2c32e595caabd01
+
+COCOAPODS: 0.32.1

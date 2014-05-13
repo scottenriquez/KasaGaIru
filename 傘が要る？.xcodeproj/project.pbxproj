@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B1273889B0545FDABC25839 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1D36DF9D344CCEB92F0C63 /* libPods.a */; };
+		EE618351191E38AD00101C53 /* KGIWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = EE618350191E38AD00101C53 /* KGIWeatherData.m */; };
+		EEAC0FC1191E26DA000DE0A4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC0FC0191E26DA000DE0A4 /* Storyboard.storyboard */; };
+		EEAEFB7B191E43C500846E8E /* KGIDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAEFB7A191E43C500846E8E /* KGIDailyForecast.m */; };
+		EEAEFB84191F06F600846E8E /* KGIOpenWeatherClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAEFB83191F06F600846E8E /* KGIOpenWeatherClient.m */; };
+		EEAEFB87191F245D00846E8E /* KGIOpenWeatherDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAEFB86191F245D00846E8E /* KGIOpenWeatherDataManager.m */; };
+		EEC6435A191DA834007AE4F6 /* KGIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC6434D191DA834007AE4F6 /* KGIAppDelegate.m */; };
+		EEC6435B191DA834007AE4F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEC64351191DA834007AE4F6 /* InfoPlist.strings */; };
+		EEC6435D191DA834007AE4F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC64354191DA834007AE4F6 /* main.m */; };
+		EEC6435E191DA834007AE4F6 /* KGIWeatherForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC64357191DA834007AE4F6 /* KGIWeatherForecastViewController.m */; };
+		EEC6435F191DA834007AE4F6 /* 傘が要る？-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEC64358191DA834007AE4F6 /* 傘が要る？-Info.plist */; };
+		EEC64364191E1AEA007AE4F6 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC64362191E1AEA007AE4F6 /* bg.png */; };
+		EEC64365191E1AEA007AE4F6 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC64363191E1AEA007AE4F6 /* bg@2x.png */; };
+		EEC742E9191F40BE0096A4FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC742E8191F40BE0096A4FD /* Images.xcassets */; };
+		EED541FC191CD3EB00F4E8D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED541FB191CD3EB00F4E8D4 /* Foundation.framework */; };
+		EED541FE191CD3EB00F4E8D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED541FD191CD3EB00F4E8D4 /* CoreGraphics.framework */; };
+		EED54200191CD3EB00F4E8D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED541FF191CD3EB00F4E8D4 /* UIKit.framework */; };
+		EED54215191CD3EB00F4E8D4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED54214191CD3EB00F4E8D4 /* XCTest.framework */; };
+		EED54216191CD3EB00F4E8D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED541FB191CD3EB00F4E8D4 /* Foundation.framework */; };
+		EED54217191CD3EB00F4E8D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED541FF191CD3EB00F4E8D4 /* UIKit.framework */; };
+		EED5421F191CD3EB00F4E8D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EED5421D191CD3EB00F4E8D4 /* InfoPlist.strings */; };
+		EED54221191CD3EB00F4E8D4 /* ______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EED54220191CD3EB00F4E8D4 /* ______Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EED54218191CD3EB00F4E8D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EED541F0191CD3EB00F4E8D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EED541F7191CD3EB00F4E8D4;
+			remoteInfo = "傘が要る？";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B1D36DF9D344CCEB92F0C63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97986BE31B3A452B9DA81CC9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EE61834F191E38AD00101C53 /* KGIWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIWeatherData.h; sourceTree = "<group>"; };
+		EE618350191E38AD00101C53 /* KGIWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIWeatherData.m; sourceTree = "<group>"; };
+		EEAC0FC0191E26DA000DE0A4 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		EEAEFB79191E43C500846E8E /* KGIDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIDailyForecast.h; sourceTree = "<group>"; };
+		EEAEFB7A191E43C500846E8E /* KGIDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIDailyForecast.m; sourceTree = "<group>"; };
+		EEAEFB82191F06F600846E8E /* KGIOpenWeatherClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIOpenWeatherClient.h; sourceTree = "<group>"; };
+		EEAEFB83191F06F600846E8E /* KGIOpenWeatherClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIOpenWeatherClient.m; sourceTree = "<group>"; };
+		EEAEFB85191F245D00846E8E /* KGIOpenWeatherDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIOpenWeatherDataManager.h; sourceTree = "<group>"; };
+		EEAEFB86191F245D00846E8E /* KGIOpenWeatherDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIOpenWeatherDataManager.m; sourceTree = "<group>"; };
+		EEC6434C191DA834007AE4F6 /* KGIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIAppDelegate.h; sourceTree = "<group>"; };
+		EEC6434D191DA834007AE4F6 /* KGIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIAppDelegate.m; sourceTree = "<group>"; };
+		EEC64352191DA834007AE4F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EEC64354191DA834007AE4F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EEC64356191DA834007AE4F6 /* KGIWeatherForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGIWeatherForecastViewController.h; path = ../View/KGIWeatherForecastViewController.h; sourceTree = "<group>"; };
+		EEC64357191DA834007AE4F6 /* KGIWeatherForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGIWeatherForecastViewController.m; path = ../View/KGIWeatherForecastViewController.m; sourceTree = "<group>"; };
+		EEC64358191DA834007AE4F6 /* 傘が要る？-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "傘が要る？-Info.plist"; sourceTree = "<group>"; };
+		EEC64359191DA834007AE4F6 /* 傘が要る？-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "傘が要る？-Prefix.pch"; sourceTree = "<group>"; };
+		EEC64362191E1AEA007AE4F6 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		EEC64363191E1AEA007AE4F6 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		EEC742E8191F40BE0096A4FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EED541F8191CD3EB00F4E8D4 /* 傘が要る？.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "傘が要る？.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED541FB191CD3EB00F4E8D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EED541FD191CD3EB00F4E8D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EED541FF191CD3EB00F4E8D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EED54213191CD3EB00F4E8D4 /* 傘が要る？Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "傘が要る？Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED54214191CD3EB00F4E8D4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EED5421C191CD3EB00F4E8D4 /* 傘が要る？Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "傘が要る？Tests-Info.plist"; sourceTree = "<group>"; };
+		EED5421E191CD3EB00F4E8D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EED54220191CD3EB00F4E8D4 /* ______Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______Tests.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EED541F5191CD3EB00F4E8D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED541FE191CD3EB00F4E8D4 /* CoreGraphics.framework in Frameworks */,
+				EED54200191CD3EB00F4E8D4 /* UIKit.framework in Frameworks */,
+				EED541FC191CD3EB00F4E8D4 /* Foundation.framework in Frameworks */,
+				8B1273889B0545FDABC25839 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED54210191CD3EB00F4E8D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED54215191CD3EB00F4E8D4 /* XCTest.framework in Frameworks */,
+				EED54217191CD3EB00F4E8D4 /* UIKit.framework in Frameworks */,
+				EED54216191CD3EB00F4E8D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEC6434A191DA834007AE4F6 /* 傘が要る？ */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6434B191DA834007AE4F6 /* App Delegate */,
+				EEC6434E191DA834007AE4F6 /* Controller */,
+				EEC6434F191DA834007AE4F6 /* Model */,
+				EEC64350191DA834007AE4F6 /* Supporting Files */,
+				EEC64355191DA834007AE4F6 /* View */,
+				EEC64358191DA834007AE4F6 /* 傘が要る？-Info.plist */,
+				EEC64359191DA834007AE4F6 /* 傘が要る？-Prefix.pch */,
+			);
+			path = "傘が要る？";
+			sourceTree = "<group>";
+		};
+		EEC6434B191DA834007AE4F6 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6434C191DA834007AE4F6 /* KGIAppDelegate.h */,
+				EEC6434D191DA834007AE4F6 /* KGIAppDelegate.m */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		EEC6434E191DA834007AE4F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EEC64356191DA834007AE4F6 /* KGIWeatherForecastViewController.h */,
+				EEC64357191DA834007AE4F6 /* KGIWeatherForecastViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EEC6434F191DA834007AE4F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE61834F191E38AD00101C53 /* KGIWeatherData.h */,
+				EE618350191E38AD00101C53 /* KGIWeatherData.m */,
+				EEAEFB79191E43C500846E8E /* KGIDailyForecast.h */,
+				EEAEFB7A191E43C500846E8E /* KGIDailyForecast.m */,
+				EEAEFB82191F06F600846E8E /* KGIOpenWeatherClient.h */,
+				EEAEFB83191F06F600846E8E /* KGIOpenWeatherClient.m */,
+				EEAEFB85191F245D00846E8E /* KGIOpenWeatherDataManager.h */,
+				EEAEFB86191F245D00846E8E /* KGIOpenWeatherDataManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EEC64350191DA834007AE4F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEC742E8191F40BE0096A4FD /* Images.xcassets */,
+				EEC64362191E1AEA007AE4F6 /* bg.png */,
+				EEC64363191E1AEA007AE4F6 /* bg@2x.png */,
+				EEC64351191DA834007AE4F6 /* InfoPlist.strings */,
+				EEC64354191DA834007AE4F6 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EEC64355191DA834007AE4F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEAC0FC0191E26DA000DE0A4 /* Storyboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EED541EF191CD3EB00F4E8D4 = {
+			isa = PBXGroup;
+			children = (
+				EEC6434A191DA834007AE4F6 /* 傘が要る？ */,
+				EED5421A191CD3EB00F4E8D4 /* 傘が要る？Tests */,
+				EED541FA191CD3EB00F4E8D4 /* Frameworks */,
+				EED541F9191CD3EB00F4E8D4 /* Products */,
+				97986BE31B3A452B9DA81CC9 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		EED541F9191CD3EB00F4E8D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EED541F8191CD3EB00F4E8D4 /* 傘が要る？.app */,
+				EED54213191CD3EB00F4E8D4 /* 傘が要る？Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EED541FA191CD3EB00F4E8D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EED541FB191CD3EB00F4E8D4 /* Foundation.framework */,
+				EED541FD191CD3EB00F4E8D4 /* CoreGraphics.framework */,
+				EED541FF191CD3EB00F4E8D4 /* UIKit.framework */,
+				EED54214191CD3EB00F4E8D4 /* XCTest.framework */,
+				3B1D36DF9D344CCEB92F0C63 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EED5421A191CD3EB00F4E8D4 /* 傘が要る？Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EED54220191CD3EB00F4E8D4 /* ______Tests.m */,
+				EED5421B191CD3EB00F4E8D4 /* Supporting Files */,
+			);
+			path = "傘が要る？Tests";
+			sourceTree = "<group>";
+		};
+		EED5421B191CD3EB00F4E8D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED5421C191CD3EB00F4E8D4 /* 傘が要る？Tests-Info.plist */,
+				EED5421D191CD3EB00F4E8D4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EED541F7191CD3EB00F4E8D4 /* 傘が要る？ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EED54224191CD3EB00F4E8D4 /* Build configuration list for PBXNativeTarget "傘が要る？" */;
+			buildPhases = (
+				9017F903FE2E446A9E2961E9 /* Check Pods Manifest.lock */,
+				EED541F4191CD3EB00F4E8D4 /* Sources */,
+				EED541F5191CD3EB00F4E8D4 /* Frameworks */,
+				EED541F6191CD3EB00F4E8D4 /* Resources */,
+				BF19990EB5E84CA09DEFF3F4 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "傘が要る？";
+			productName = "傘が要る？";
+			productReference = EED541F8191CD3EB00F4E8D4 /* 傘が要る？.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EED54212191CD3EB00F4E8D4 /* 傘が要る？Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EED54227191CD3EB00F4E8D4 /* Build configuration list for PBXNativeTarget "傘が要る？Tests" */;
+			buildPhases = (
+				EED5420F191CD3EB00F4E8D4 /* Sources */,
+				EED54210191CD3EB00F4E8D4 /* Frameworks */,
+				EED54211191CD3EB00F4E8D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EED54219191CD3EB00F4E8D4 /* PBXTargetDependency */,
+			);
+			name = "傘が要る？Tests";
+			productName = "傘が要る？Tests";
+			productReference = EED54213191CD3EB00F4E8D4 /* 傘が要る？Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EED541F0191CD3EB00F4E8D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KGI;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Hunter Kyle Gearhart";
+				TargetAttributes = {
+					EED54212191CD3EB00F4E8D4 = {
+						TestTargetID = EED541F7191CD3EB00F4E8D4;
+					};
+				};
+			};
+			buildConfigurationList = EED541F3191CD3EB00F4E8D4 /* Build configuration list for PBXProject "傘が要る？" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EED541EF191CD3EB00F4E8D4;
+			productRefGroup = EED541F9191CD3EB00F4E8D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EED541F7191CD3EB00F4E8D4 /* 傘が要る？ */,
+				EED54212191CD3EB00F4E8D4 /* 傘が要る？Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EED541F6191CD3EB00F4E8D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC6435F191DA834007AE4F6 /* 傘が要る？-Info.plist in Resources */,
+				EEC6435B191DA834007AE4F6 /* InfoPlist.strings in Resources */,
+				EEC64364191E1AEA007AE4F6 /* bg.png in Resources */,
+				EEC742E9191F40BE0096A4FD /* Images.xcassets in Resources */,
+				EEC64365191E1AEA007AE4F6 /* bg@2x.png in Resources */,
+				EEAC0FC1191E26DA000DE0A4 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED54211191CD3EB00F4E8D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED5421F191CD3EB00F4E8D4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9017F903FE2E446A9E2961E9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF19990EB5E84CA09DEFF3F4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EED541F4191CD3EB00F4E8D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEAEFB7B191E43C500846E8E /* KGIDailyForecast.m in Sources */,
+				EE618351191E38AD00101C53 /* KGIWeatherData.m in Sources */,
+				EEC6435D191DA834007AE4F6 /* main.m in Sources */,
+				EEAEFB87191F245D00846E8E /* KGIOpenWeatherDataManager.m in Sources */,
+				EEC6435A191DA834007AE4F6 /* KGIAppDelegate.m in Sources */,
+				EEAEFB84191F06F600846E8E /* KGIOpenWeatherClient.m in Sources */,
+				EEC6435E191DA834007AE4F6 /* KGIWeatherForecastViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED5420F191CD3EB00F4E8D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED54221191CD3EB00F4E8D4 /* ______Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EED54219191CD3EB00F4E8D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EED541F7191CD3EB00F4E8D4 /* 傘が要る？ */;
+			targetProxy = EED54218191CD3EB00F4E8D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EEC64351191DA834007AE4F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEC64352191DA834007AE4F6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EED5421D191CD3EB00F4E8D4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EED5421E191CD3EB00F4E8D4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EED54222191CD3EB00F4E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EED54223191CD3EB00F4E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EED54225191CD3EB00F4E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97986BE31B3A452B9DA81CC9 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "傘が要る？/傘が要る？-Prefix.pch";
+				INFOPLIST_FILE = "傘が要る？/傘が要る？-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EED54226191CD3EB00F4E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97986BE31B3A452B9DA81CC9 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "傘が要る？/傘が要る？-Prefix.pch";
+				INFOPLIST_FILE = "傘が要る？/傘が要る？-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EED54228191CD3EB00F4E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/傘が要る？.app/傘が要る？";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "傘が要る？/傘が要る？-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "傘が要る？Tests/傘が要る？Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EED54229191CD3EB00F4E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/傘が要る？.app/傘が要る？";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "傘が要る？/傘が要る？-Prefix.pch";
+				INFOPLIST_FILE = "傘が要る？Tests/傘が要る？Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EED541F3191CD3EB00F4E8D4 /* Build configuration list for PBXProject "傘が要る？" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED54222191CD3EB00F4E8D4 /* Debug */,
+				EED54223191CD3EB00F4E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EED54224191CD3EB00F4E8D4 /* Build configuration list for PBXNativeTarget "傘が要る？" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED54225191CD3EB00F4E8D4 /* Debug */,
+				EED54226191CD3EB00F4E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EED54227191CD3EB00F4E8D4 /* Build configuration list for PBXNativeTarget "傘が要る？Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED54228191CD3EB00F4E8D4 /* Debug */,
+				EED54229191CD3EB00F4E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EED541F0191CD3EB00F4E8D4 /* Project object */;
+}
