@@ -1,13 +1,5 @@
-KasaGaIru
-=========
-
-A weather application for iOS which informs users to bring necessary items depending upon their location and the day's weather forecast.
-
-提出用の追加説明
-================
-
-ギアハート・カイル
-2014年5月24日
+傘が要る？
+==========
 
 「傘が要る？」iOS天気予報アプリケーションの概要と特徴について
 
