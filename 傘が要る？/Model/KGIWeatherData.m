@@ -10,6 +10,7 @@
 
 @interface KGIWeatherData ()
 @property (nonatomic, strong) NSDictionary *imageMap;
+@property (nonatomic, strong) NSArray *rainyConditions;
 @end
 
 @implementation KGIWeatherData {
@@ -42,6 +43,33 @@
         };
     }
     return _imageMap[self.icon];
+}
+
+- (BOOL)needUmbrella {
+    // Array of all the wet conditions calling for an umbrella
+    if (!self.rainyConditions) {
+        self.rainyConditions = @[
+          @"09d", // weather-shower
+          @"10d", // weather-rain
+          @"11d", // weather-tstorm
+          @"13d", // weather-snow
+          @"50d", // weather-mist
+          @"09n", // weather-shower
+          @"10n", // weather-rain-night
+          @"11n", // weather-tstorm
+          @"13n", // weather-snow
+          @"50n"  // weather-mist
+        ];
+    }
+    return [_rainyConditions containsObject:self.icon];
+}
+
+- (BOOL)needJacket:(NSNumber *)jacketThreshold {
+    return [self.temperature floatValue] < [jacketThreshold floatValue];
+}
+
+- (BOOL)needSunUmbrella:(NSNumber *)sunUmbrellaThreshold {
+    return [self.temperature floatValue] > [sunUmbrellaThreshold floatValue];
 }
 
 #pragma mark MTLValueTransformer

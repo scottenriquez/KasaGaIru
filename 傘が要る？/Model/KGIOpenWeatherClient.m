@@ -51,7 +51,7 @@
                 // Inform the subscriber that an error occurred during the retrieval phase
                 [subscriber sendError:error];
             }
-            // Despite its successfulness, inform the subscriber that the request is complete
+            // Regardless of its successfulness, inform the subscriber that the request is complete
             [subscriber sendCompleted];
         }];
         
@@ -85,7 +85,7 @@
 - (RACSignal *)fetchHourlyForecastForLocation:(CLLocationCoordinate2D)coordinate usingUnits:(BOOL)isMetric {
     // Build the URL string which serves as a request to the Open Weather API
     NSString *units = (isMetric) ? @"metric" : @"imperial";
-    NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast?lat=%f&lon=%f&units=%@&cnt=12",coordinate.latitude, coordinate.longitude, units];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast?lat=%f&lon=%f&units=%@&cnt=15",coordinate.latitude, coordinate.longitude, units];
     NSURL *url = [NSURL URLWithString:urlString];
     
     // Create a signal which will allow subsequent Reactive Cocoa calls to be made on it
@@ -104,7 +104,7 @@
 
 - (RACSignal *)fetchDailyForecastForLocation:(CLLocationCoordinate2D)coordinate usingUnits:(BOOL)isMetric {
     NSString *units = (isMetric) ? @"metric" : @"imperial";
-    NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/daily?lat=%f&lon=%f&units=%@&cnt=7",coordinate.latitude, coordinate.longitude, units];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/daily?lat=%f&lon=%f&units=%@&cnt=3",coordinate.latitude, coordinate.longitude, units];
     NSURL *url = [NSURL URLWithString:urlString];
     
     // Create a signal which will allow subsequent Reactive Cocoa calls to be made on it
@@ -115,7 +115,7 @@
         // Return a list of signals which all allow Reactive Cocoa calls to be made on them
         return [[list map:^(NSDictionary *item) {
             // For each JSON object, map its values to a KGIWeatherData object
-            return [MTLJSONAdapter modelOfClass:[KGIWeatherData class] fromJSONDictionary:item error:nil];
+            return [MTLJSONAdapter modelOfClass:[KGIDailyForecast class] fromJSONDictionary:item error:nil];
         }] array];
     }];
 }

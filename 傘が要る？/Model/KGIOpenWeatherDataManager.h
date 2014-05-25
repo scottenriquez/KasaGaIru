@@ -29,8 +29,12 @@
 @property (nonatomic, strong, readonly) NSDateFormatter *hourlyFormatter;
 @property (nonatomic, strong, readonly) NSDateFormatter *dailyFormatter;
 
+
 // Locates the user to kick-off or refresh the weather information fetching process
 - (void)findCurrentLocationAndRetrieveWeatherData;
+
+// Retrieves weather data for the current user location
+- (RACSignal *)updateWeatherInformation;
 
 // Specifies the units of measure in use
 @property (nonatomic) BOOL usingMetric;

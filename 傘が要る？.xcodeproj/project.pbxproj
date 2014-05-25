@@ -53,7 +53,7 @@
 		EEAEFB83191F06F600846E8E /* KGIOpenWeatherClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIOpenWeatherClient.m; sourceTree = "<group>"; };
 		EEAEFB85191F245D00846E8E /* KGIOpenWeatherDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIOpenWeatherDataManager.h; sourceTree = "<group>"; };
 		EEAEFB86191F245D00846E8E /* KGIOpenWeatherDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIOpenWeatherDataManager.m; sourceTree = "<group>"; };
-		EEC6434C191DA834007AE4F6 /* KGIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIAppDelegate.h; sourceTree = "<group>"; };
+		EEC6434C191DA834007AE4F6 /* KGIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGIAppDelegate.h; path = "App Delegate/KGIAppDelegate.h"; sourceTree = "<group>"; };
 		EEC6434D191DA834007AE4F6 /* KGIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIAppDelegate.m; sourceTree = "<group>"; };
 		EEC64352191DA834007AE4F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EEC64354191DA834007AE4F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +103,7 @@
 		EEC6434A191DA834007AE4F6 /* 傘が要る？ */ = {
 			isa = PBXGroup;
 			children = (
+				EEC6434C191DA834007AE4F6 /* KGIAppDelegate.h */,
 				EEC6434B191DA834007AE4F6 /* App Delegate */,
 				EEC6434E191DA834007AE4F6 /* Controller */,
 				EEC6434F191DA834007AE4F6 /* Model */,
@@ -117,7 +118,6 @@
 		EEC6434B191DA834007AE4F6 /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				EEC6434C191DA834007AE4F6 /* KGIAppDelegate.h */,
 				EEC6434D191DA834007AE4F6 /* KGIAppDelegate.m */,
 			);
 			path = "App Delegate";

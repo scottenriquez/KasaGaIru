@@ -47,7 +47,10 @@
 - (id)init {
     if (self = [super init]) {
         // Specify the formatting to be used on hourly and daily weather forecast data
+        // TODO: If the ability to add multiple cities is added, have the formatter's time zone be set to that of the city that weather is being pulled for (as it's not always the user's location)
         _hourlyFormatter = [[NSDateFormatter alloc] init];
+        // Set the formatter to always use the 12 hour system so that am and pm works on all devices 
+        _hourlyFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         _hourlyFormatter.dateFormat = @"h a";
         
         _dailyFormatter = [[NSDateFormatter alloc] init];
@@ -68,21 +71,19 @@
             // Only attempt to grab weather data when the user's location isn't nil
             ignore:nil]
            
-           // Return a signal which is the result fo the call to three different update functions
+           // Return a signal which is the result for the call to three different update functions
            flattenMap:^(CLLocation *newLocation) {
                return [RACSignal merge:@[
-                                         [self updateCurrentConditions],
-                                         [self updateDailyForecast],
-                                         [self updateHourlyForecast]
-                                         ]];
+                [self updateCurrentConditions],
+                [self updateDailyForecast],
+                [self updateHourlyForecast]
+                ]];
                // Notify all subscribers on the main thread that weather information has been updated
            }] deliverOn:RACScheduler.mainThreadScheduler]
          // Display an error notification in the event of retrieval failure
          subscribeError:^(NSError *error) {
-             // TODO: Consider removing this, or changing it to display an UIAlertView
-             /*[TSMessage showNotificationWithTitle:@"Error"
-                                         subtitle:@"There was a problem fetching the latest weather."
-                                             type:TSMessageNotificationTypeError];*/
+             // Display an alert in the event that the Open Weather call was unsuccessful
+             [[[UIAlertView alloc] initWithTitle:@"Weather Retrieval Error" message:@"There was an issue fetching weather data from Open Weather." delegate:nil cancelButtonTitle:@"Done" otherButtonTitles:nil] show];
          }];
     }
     return self;
@@ -91,6 +92,14 @@
 - (void)findCurrentLocationAndRetrieveWeatherData {
     self.isFirstUpdate = YES;
     [self.locationManager startUpdatingLocation];
+}
+
+- (RACSignal *) updateWeatherInformation {
+    return [RACSignal merge:@[
+        [self updateCurrentConditions],
+        [self updateDailyForecast],
+        [self updateHourlyForecast]
+    ]];
 }
 
 - (RACSignal *)updateCurrentConditions {

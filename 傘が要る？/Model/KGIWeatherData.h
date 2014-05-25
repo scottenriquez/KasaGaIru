@@ -27,7 +27,15 @@
 @property (nonatomic, strong) NSString *icon;
 
 // Delivers the appropriate image name for the current instance's weather condition
-// @return NSString name of the image's file
 - (NSString *)imageName;
+
+// Returns weather or not the weather object indicates conditions which necessitate an umbrella
+- (BOOL)needUmbrella;
+
+// Returns whether or not the weather object indicates conditions which the user indicates as when they need a jacket
+- (BOOL)needJacket:(NSNumber *)jacketThreshold;
+
+// Given a user's sun umbrella threshold value, return whether or not they'll need a sun umbrella
+- (BOOL)needSunUmbrella:(NSNumber *)sunUmbrellaThreshold;
 
 @end
