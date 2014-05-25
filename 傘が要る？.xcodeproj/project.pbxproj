@@ -17,7 +17,6 @@
 		EEC6435B191DA834007AE4F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEC64351191DA834007AE4F6 /* InfoPlist.strings */; };
 		EEC6435D191DA834007AE4F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC64354191DA834007AE4F6 /* main.m */; };
 		EEC6435E191DA834007AE4F6 /* KGIWeatherForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC64357191DA834007AE4F6 /* KGIWeatherForecastViewController.m */; };
-		EEC6435F191DA834007AE4F6 /* 傘が要る？-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEC64358191DA834007AE4F6 /* 傘が要る？-Info.plist */; };
 		EEC64364191E1AEA007AE4F6 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC64362191E1AEA007AE4F6 /* bg.png */; };
 		EEC64365191E1AEA007AE4F6 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC64363191E1AEA007AE4F6 /* bg@2x.png */; };
 		EEC742E9191F40BE0096A4FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC742E8191F40BE0096A4FD /* Images.xcassets */; };
@@ -295,7 +294,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC6435F191DA834007AE4F6 /* 傘が要る？-Info.plist in Resources */,
 				EEC6435B191DA834007AE4F6 /* InfoPlist.strings in Resources */,
 				EEC64364191E1AEA007AE4F6 /* bg.png in Resources */,
 				EEC742E9191F40BE0096A4FD /* Images.xcassets in Resources */,

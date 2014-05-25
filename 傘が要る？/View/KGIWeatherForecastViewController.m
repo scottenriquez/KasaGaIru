@@ -33,14 +33,13 @@
 @property (strong, nonatomic) IBOutlet UIImageView *umbrellaInventoryIndicator;
 @property (strong, nonatomic) IBOutlet UIImageView *jacketIndicator;
 @property (strong, nonatomic) IBOutlet UIImageView *jacketInventoryIndicator;
-@property (strong, nonatomic) IBOutlet UIImageView *sunUmbrellaIndicator;
-@property (strong, nonatomic) IBOutlet UIImageView *sunUmbrellaInventoryIndicator;
 @property (strong, nonatomic) IBOutlet UILabel *jacketThresholdTitleLabel;
 @property (strong, nonatomic) IBOutlet UISlider *jacketThresholdSlider;
 @property (strong, nonatomic) IBOutlet UILabel *jacketThresholdLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sunUmbrellaThresholdTitleLabel;
 @property (strong, nonatomic) IBOutlet UISlider *sunUmbrellaThresholdSlider;
 @property (strong, nonatomic) IBOutlet UILabel *sunUmbrellaThresholdLabel;
+@property (strong, nonatomic) IBOutlet UIButton *refreshButton;
 
 
 @end
@@ -62,6 +61,11 @@
 // Used to differentiate between which units of measure are in use
 #define METRIC 0
 #define IMPERIAL 1
+
+// Constants for loading in and out of NSUserDefaults
+static NSString *const kUnitsSelection = @"Units Selection";
+static NSString *const kJacketThreshold = @"Jacket Threshold";
+static NSString *const kSunUmbrellaThreshold = @"Sun Umbrella Threshold";
 
 @implementation KGIWeatherForecastViewController
 
@@ -88,8 +92,31 @@
     [self.currentWeatherCondition setText:@"Loading Current Weather Data..."];
     
     // Set up the hidden settings view UI
-    [self.jacketThresholdLabel setText:[NSString stringWithFormat:@"%.0f°", self.jacketThresholdSlider.value]];
-    [self.sunUmbrellaThresholdLabel setText:[NSString stringWithFormat:@"%.0f°", self.sunUmbrellaThresholdSlider.value]];
+    // Initialize with user defaults if available
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:kUnitsSelection]) {
+        int selectedUnitsSetting = [[NSUserDefaults standardUserDefaults] integerForKey:kUnitsSelection];
+        [self.unitToggle setSelectedSegmentIndex:selectedUnitsSetting];
+        // Ensure that the first load of weather data will be in the appropriate units
+        [KGIOpenWeatherDataManager sharedManager].usingMetric = (selectedUnitsSetting == 0) ? YES : NO;
+        // Update the sliders to the appropriate range
+        [self updateSettingSliderRanges];
+    }
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kJacketThreshold]) {
+        [self.jacketThresholdLabel setText:[NSString stringWithFormat:@"%.0f°", self.jacketThresholdSlider.value]];
+    } else {
+        double jacketThresholdUserSetting = [[NSUserDefaults standardUserDefaults] doubleForKey:kJacketThreshold];
+        [self.jacketThresholdLabel setText:[NSString stringWithFormat:@"%.0f°", jacketThresholdUserSetting]];
+        [self.jacketThresholdSlider setValue:jacketThresholdUserSetting];
+    }
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kSunUmbrellaThreshold]) {
+        [self.sunUmbrellaThresholdLabel setText:[NSString stringWithFormat:@"%.0f°", self.sunUmbrellaThresholdSlider.value]];
+    } else {
+        double sunUmbrellaThresholdUserSetting = [[NSUserDefaults standardUserDefaults] doubleForKey:kSunUmbrellaThreshold];
+        [self.sunUmbrellaThresholdLabel setText:[NSString stringWithFormat:@"%.0f°", sunUmbrellaThresholdUserSetting]];
+        [self.sunUmbrellaThresholdSlider setValue:sunUmbrellaThresholdUserSetting];
+    }
     
     // Subscribe to recieve updates when weather data has been received from the Open Weather API
     [[RACObserve([KGIOpenWeatherDataManager sharedManager], currentCondition)
@@ -129,6 +156,13 @@
     // location and the appropriate necessary weather data
     [[KGIOpenWeatherDataManager sharedManager] findCurrentLocationAndRetrieveWeatherData];
     
+    // Adds an observer which tells the weather manager to refresh the weather data if the application
+    // is re-entering the foreground
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(findCurrentLocationAndRetrieveWeatherData)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:[KGIOpenWeatherDataManager sharedManager]];
+    
 }
 
 - (void)updateItemsList {
@@ -151,10 +185,14 @@
     
     // If the user has indicated a sun umbrella temperature threshold, check against it and show the appropriate picture
     if ([currentConditions needSunUmbrella:[NSNumber numberWithFloat:[self.sunUmbrellaThresholdLabel.text floatValue]]]) {
-        self.sunUmbrellaIndicator.image = [UIImage imageNamed:@"umbrella"];
-    } else {
-        self.sunUmbrellaIndicator.image = nil;
+        self.umbrellaIndicator.image = [UIImage imageNamed:@"umbrella"];
     }
+}
+
+
+- (IBAction)refreshButtonPressed:(UIButton *)sender {
+    // Re-locate the user as they may have moved and retrieve the weather again
+    [[KGIOpenWeatherDataManager sharedManager] findCurrentLocationAndRetrieveWeatherData];
 }
 
 - (void)updateInventory {
@@ -163,7 +201,6 @@
     
     // Truth values to be ticked if an item is needed somewhere in the forecast
     BOOL needUmbrellaInInventory = NO;
-    BOOL needSunUmbrellaInInventory = NO;
     BOOL needJacketInInventory = NO;
     
     // We shall naively set an end date/time for the scan by adding 24 hours to the current time
@@ -173,7 +210,7 @@
     // Scan through the rest of the day's forecast and indicate the necessity of any items
     for (KGIWeatherData *hourlyWeatherData in hourlyForecast) {
         // If all items are in the inventory, no more checks need to be made
-        if (needJacketInInventory && needUmbrellaInInventory && needSunUmbrellaInInventory) {
+        if (needJacketInInventory && needUmbrellaInInventory) {
             break;
         }
         
@@ -192,14 +229,13 @@
         }
         // Check if a sun umbrella will be needed in the event of high temperatures above the user's threshold
         if ([hourlyWeatherData needSunUmbrella:[NSNumber numberWithFloat:[self.sunUmbrellaThresholdLabel.text floatValue]]]) {
-            needSunUmbrellaInInventory = YES;
+            needUmbrellaInInventory = YES;
         }
     }
     
     // Update what inventory items will appear lit up
     self.jacketInventoryIndicator.image = (needJacketInInventory) ? [UIImage imageNamed:@"jacket"] : nil;
     self.umbrellaInventoryIndicator.image = (needUmbrellaInInventory) ? [UIImage imageNamed:@"umbrella"] : nil;
-    self.sunUmbrellaInventoryIndicator.image = (needSunUmbrellaInInventory) ? [UIImage imageNamed:@"umbrella"] : nil;
     
     // Ensure that the inventory will also factor in the current conditions, as the hourly forecast doesn't always contain them
     if (self.umbrellaIndicator.image == [UIImage imageNamed:@"umbrella"]) {
@@ -207,9 +243,6 @@
     }
     if (self.jacketIndicator.image == [UIImage imageNamed:@"jacket"]) {
         self.jacketInventoryIndicator.image = [UIImage imageNamed:@"jacket"];
-    }
-    if (self.sunUmbrellaIndicator.image == [UIImage imageNamed:@"umbrella"]) {
-        self.sunUmbrellaInventoryIndicator.image = [UIImage imageNamed:@"umbrella"];
     }
 }
 
@@ -245,6 +278,14 @@
             self.settingsDoneButton.hidden = YES;
             self.overlaySettingsView.alpha = 0.0;
             
+            // Save current settings as user defaults
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setInteger:self.unitToggle.selectedSegmentIndex forKey:kUnitsSelection];
+            [defaults setDouble:self.jacketThresholdSlider.value forKey:kJacketThreshold];
+            [defaults setDouble:self.sunUmbrellaThresholdSlider.value forKey:kSunUmbrellaThreshold];
+            
+            [defaults synchronize];
+            
             // Reload the weather data, as settings may have been changed
             // TODO: Have this occur only when the user changes to a different city
             // any change to the units or thresholds can be handled by a simple UI update and
@@ -268,6 +309,27 @@
     }];
 }
 
+
+- (void)updateSettingSliderRanges {
+    // Change ranges based off of the selected setting
+    if (self.unitToggle.selectedSegmentIndex == METRIC) {
+        // The min and max values for the jacket threshold depend on the current units being used
+        self.jacketThresholdSlider.minimumValue = -15;
+        self.jacketThresholdSlider.maximumValue = 23;
+        
+        // The min and max values for the sum umbrella threshold depend on the current units as well
+        self.sunUmbrellaThresholdSlider.minimumValue = 0;
+        self.sunUmbrellaThresholdSlider.maximumValue = 40;
+    } else if(self.unitToggle.selectedSegmentIndex == IMPERIAL) {
+        // The min and max values for the jacket threshold depend on the current units being used
+        self.jacketThresholdSlider.minimumValue = 5;
+        self.jacketThresholdSlider.maximumValue = 73;
+        
+        // The min and max values for the sum umbrella threshold depend on the current units as well
+        self.sunUmbrellaThresholdSlider.minimumValue = 32;
+        self.sunUmbrellaThresholdSlider.maximumValue = 110;
+    }
+}
 
 - (IBAction)toggleUnitsOfMeasure:(id)sender {
     // Change the content of the API call based on the new setting
