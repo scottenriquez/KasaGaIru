@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B1273889B0545FDABC25839 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1D36DF9D344CCEB92F0C63 /* libPods.a */; };
 		EE618351191E38AD00101C53 /* KGIWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = EE618350191E38AD00101C53 /* KGIWeatherData.m */; };
+		EE6BA7B81933635F000569BE /* KGIWeatherForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6BA7B71933635F000569BE /* KGIWeatherForecastViewController.m */; };
 		EEAC0FC1191E26DA000DE0A4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAC0FC0191E26DA000DE0A4 /* Storyboard.storyboard */; };
 		EEAEFB7B191E43C500846E8E /* KGIDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAEFB7A191E43C500846E8E /* KGIDailyForecast.m */; };
 		EEAEFB84191F06F600846E8E /* KGIOpenWeatherClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAEFB83191F06F600846E8E /* KGIOpenWeatherClient.m */; };
@@ -16,7 +17,6 @@
 		EEC6435A191DA834007AE4F6 /* KGIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC6434D191DA834007AE4F6 /* KGIAppDelegate.m */; };
 		EEC6435B191DA834007AE4F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEC64351191DA834007AE4F6 /* InfoPlist.strings */; };
 		EEC6435D191DA834007AE4F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC64354191DA834007AE4F6 /* main.m */; };
-		EEC6435E191DA834007AE4F6 /* KGIWeatherForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC64357191DA834007AE4F6 /* KGIWeatherForecastViewController.m */; };
 		EEC64364191E1AEA007AE4F6 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC64362191E1AEA007AE4F6 /* bg.png */; };
 		EEC64365191E1AEA007AE4F6 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC64363191E1AEA007AE4F6 /* bg@2x.png */; };
 		EEC742E9191F40BE0096A4FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC742E8191F40BE0096A4FD /* Images.xcassets */; };
@@ -45,6 +45,8 @@
 		97986BE31B3A452B9DA81CC9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EE61834F191E38AD00101C53 /* KGIWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIWeatherData.h; sourceTree = "<group>"; };
 		EE618350191E38AD00101C53 /* KGIWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIWeatherData.m; sourceTree = "<group>"; };
+		EE6BA7B61933635F000569BE /* KGIWeatherForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIWeatherForecastViewController.h; sourceTree = "<group>"; };
+		EE6BA7B71933635F000569BE /* KGIWeatherForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIWeatherForecastViewController.m; sourceTree = "<group>"; };
 		EEAC0FC0191E26DA000DE0A4 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		EEAEFB79191E43C500846E8E /* KGIDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIDailyForecast.h; sourceTree = "<group>"; };
 		EEAEFB7A191E43C500846E8E /* KGIDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIDailyForecast.m; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		EEC6434D191DA834007AE4F6 /* KGIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIAppDelegate.m; sourceTree = "<group>"; };
 		EEC64352191DA834007AE4F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EEC64354191DA834007AE4F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EEC64356191DA834007AE4F6 /* KGIWeatherForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGIWeatherForecastViewController.h; path = ../View/KGIWeatherForecastViewController.h; sourceTree = "<group>"; };
-		EEC64357191DA834007AE4F6 /* KGIWeatherForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGIWeatherForecastViewController.m; path = ../View/KGIWeatherForecastViewController.m; sourceTree = "<group>"; };
 		EEC64358191DA834007AE4F6 /* 傘が要る？-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "傘が要る？-Info.plist"; sourceTree = "<group>"; };
 		EEC64359191DA834007AE4F6 /* 傘が要る？-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "傘が要る？-Prefix.pch"; sourceTree = "<group>"; };
 		EEC64362191E1AEA007AE4F6 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 		EEC6434E191DA834007AE4F6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EEC64356191DA834007AE4F6 /* KGIWeatherForecastViewController.h */,
-				EEC64357191DA834007AE4F6 /* KGIWeatherForecastViewController.m */,
+				EE6BA7B61933635F000569BE /* KGIWeatherForecastViewController.h */,
+				EE6BA7B71933635F000569BE /* KGIWeatherForecastViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 				EEAEFB87191F245D00846E8E /* KGIOpenWeatherDataManager.m in Sources */,
 				EEC6435A191DA834007AE4F6 /* KGIAppDelegate.m in Sources */,
 				EEAEFB84191F06F600846E8E /* KGIOpenWeatherClient.m in Sources */,
-				EEC6435E191DA834007AE4F6 /* KGIWeatherForecastViewController.m in Sources */,
+				EE6BA7B81933635F000569BE /* KGIWeatherForecastViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
